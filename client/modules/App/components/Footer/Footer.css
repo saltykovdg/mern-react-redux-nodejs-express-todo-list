@@ -1,0 +1,15 @@
+.selected {
+  border-bottom: 1px solid white;
+}
+
+footer {
+  height: 60px;
+  width: 100%;
+  background: black;
+  bottom: 0;
+  position: fixed;
+}
+
+footer p {
+  color: silver;
+}
