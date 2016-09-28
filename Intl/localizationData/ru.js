@@ -11,5 +11,6 @@ export default {
     footerText: 'Пользовательский текст в футере 123.',
     welcomePageTitle: 'Добро пожаловать',
     welcomePageText: 'Это всего лишь простое приложение на MERN.',
+    todoToggleStatus: 'Переключить статус',
   },
 };

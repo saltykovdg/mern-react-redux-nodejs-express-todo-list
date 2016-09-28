@@ -1,15 +1,18 @@
 import React, { PropTypes } from 'react';
+import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
 // Import Style
 import styles from './TodoListItem.css';
 
 function TodoListItem(props) {
   return (
-    <li>
-      <label className="checkbox">
-        <input type="checkbox" defaultChecked={props.todo.completed} onClick={props.onComplete} />
-        <span className={props.todo.completed ? styles.done_true : ''}>{props.todo.text}</span>
-      </label>
+    <li className={styles.li_style}>
+      <div className={props.todo.completed ? styles.done_true : ''}>
+        <button className="btn btn-link btn-xs" onClick={props.onComplete}>
+          <FormattedMessage id="todoToggleStatus" />
+        </button>
+        {props.todo.text}
+      </div>
     </li>
   );
 }
@@ -21,6 +24,7 @@ TodoListItem.propTypes = {
     cuid: PropTypes.string.isRequired,
   }).isRequired,
   onComplete: PropTypes.func.isRequired,
+  intl: intlShape.isRequired,
 };
 
-export default TodoListItem;
+export default injectIntl(TodoListItem);

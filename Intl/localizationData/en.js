@@ -11,5 +11,6 @@ export default {
     footerText: 'Footer custom text 123.',
     welcomePageTitle: 'Welcome',
     welcomePageText: 'This is just a simple application on MERN',
+    todoToggleStatus: 'Toggle status',
   },
 };
