@@ -17,10 +17,9 @@ test('renders properly', t => {
   );
 
   t.truthy(wrapper.hasClass('form-inline'));
-  t.truthy(wrapper.find('input'));
+  t.is(wrapper.find('input').length, 1);
   t.truthy(wrapper.find('button').find('.btn .btn-primary').containsMatchingElement(<FormattedMessage id="addTodo" />));
   t.truthy(wrapper.find('button').find('.btn .btn-danger').containsMatchingElement(<FormattedMessage id="deleteCompletedTodos" />));
-  t.is(wrapper.find('input').length, 1);
 });
 
 test('has correct props', t => {
