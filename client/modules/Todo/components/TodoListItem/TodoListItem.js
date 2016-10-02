@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { injectIntl, intlShape, FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 // Import Style
 import styles from './TodoListItem.css';
@@ -24,7 +24,6 @@ TodoListItem.propTypes = {
     cuid: PropTypes.string.isRequired,
   }).isRequired,
   onComplete: PropTypes.func.isRequired,
-  intl: intlShape.isRequired,
 };
 
-export default injectIntl(TodoListItem);
+export default TodoListItem;
