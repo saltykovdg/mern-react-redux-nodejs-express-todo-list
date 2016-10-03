@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { FormattedMessage } from 'react-intl';
 
@@ -32,10 +32,6 @@ export function Header(props, context) {
 
 Header.contextTypes = {
   router: React.PropTypes.object,
-};
-
-Header.propTypes = {
-  intl: PropTypes.object.isRequired,
 };
 
 export default Header;
