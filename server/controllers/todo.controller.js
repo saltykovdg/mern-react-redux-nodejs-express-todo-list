@@ -63,8 +63,9 @@ export function completeTodo(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    todo.completed = !todo.completed;
-    todo.save((errSave, saved) => {
+    const newTodo = new Todo(todo);
+    newTodo.completed = !newTodo.completed;
+    newTodo.save((errSave, saved) => {
       if (errSave) {
         res.status(500).send(errSave);
       }
