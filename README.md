@@ -31,7 +31,7 @@ The Webpack configuration is minimal and beginner-friendly. You can customise an
 
 ### Server
 
-MERN uses express web framework. Our app sits in server.js where we check for NODE_ENV.
+MERN uses the express web application framework. Our app sits in `server/server.js` where we check for `NODE_ENV`.
 
 If NODE_ENV is development, we apply Webpack middlewares for bundling and Hot Module Replacement.
 
@@ -39,7 +39,7 @@ If NODE_ENV is development, we apply Webpack middlewares for bundling and Hot Mo
 
 We use React Router's match function for handling all page requests so that browser history works.
 
-All the routes are defined in `client/routes.js`. React Router renders components according to route requested.
+All the routes are defined in `client/routes.js`. React Router renders components according to the requested route.
 
 ```js
 // Server Side Rendering based on routes matched by React-router.
@@ -80,17 +80,17 @@ app.use((req, res) => {
 });
 ```
 
-`match` takes two parameters, first is an object that contains routes, location and history and second is a callback function which is called when routes have been matched to a location.
+`match` takes two parameters, the first one is an object that contains routes, location and history and the second is a callback function which is called when routes have been matched to a location.
 
-If there's an error in matching we return 500 status code, if no matches are found we return 404 status code. If a match is found then, we need to create a new Redux Store instance.
+If there's an error in matching we return the `500` status code, if no matches are found we return the `404` status code. If a match is found then, we need to create a new Redux Store instance.
 
 **Note:** A new Redux Store has populated afresh on every request.
 
-`fetchComponentData` is the essential function. It takes three params: first is a dispatch function of Redux store, the second is an array of components that should be rendered in current route and third is the route params. `fetchComponentData` collects all the needs (need is an array of actions that are required to be dispatched before rendering the component) of components in the current route. It returns a promise when all the required actions are dispatched. We render the page and send data to the client for client-side rendering in `window.__INITIAL_STATE__`.
+`fetchComponentData` is the essential function. It takes three params: the first one is a dispatch function of Redux store, the second is an array of components that should be rendered in current route and third is the route params. `fetchComponentData` collects all the needs (need is an array of actions that are required to be dispatched before rendering the component) of components in the current route. It returns a promise when all the required actions are dispatched. We render the page and send data to the client for client-side rendering in `window.__INITIAL_STATE__`.
 
 ### Client
 
-Client directory contains all the shared components, routes, modules.
+The client directory contains all the shared components, routes, modules.
 
 #### components
 This folder contains all the common components which are used throughout the project.
@@ -101,10 +101,10 @@ Index.js simply does client side rendering using the data provided from `window.
 ## Misc
 
 ### Importing Assets
-Assets can be kept where you want and can be imported into your js files or css files. Those fill be served by webpack in development mode and copied to the dist folder during production.
+Assets can be kept where you want and can be imported into your js files or css files. Those fill be served by webpack in development mode and copied to the `dist` folder during production.
 
 ### ES6 support
-We use babel to transpile code in both server and client with `stage-0` plugin. So, you can use both ES6 and experimental ES7 features.
+We use babel to transpile code in both server and client with the `stage-0` plugin. So, you can use both ES6 and experimental ES7 features.
 
 ### Docker
 There are docker configurations for both development and production.
@@ -168,10 +168,10 @@ Also, `target-path` supports [ejs](https://github.com/mde/ejs) and the following
     ```
     Here, notice the usage. In `<module-name>/<component-name>`, `<module-name>` will be passed as `parent` and `<component-name>` will be passed as `<name>`.
 
-3. `helpers` - an helper object is passed which include common utility functions. For now, it contains `capitalize`. If you want to add more, send a PR to [mern-cli](https://github.com/Hashnode/mern-cli).
+3. `helpers` - a helper object is passed which includes common utility functions. For now, it contains `capitalize`. If you want to add more, send a PR to [mern-cli](https://github.com/Hashnode/mern-cli).
 
 #### Blueprint files
-Blueprints are basically [ejs](https://github.com/mde/ejs) templates which are rendered with the same three variables(`name`, optional `parent` and `helpers` object) as above.
+Blueprints are basically [ejs](https://github.com/mde/ejs) templates which are rendered with the same three variables (`name`, optional `parent` and `helpers` object) as above.
 
 ### Caveats
 
